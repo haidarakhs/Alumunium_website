@@ -12,7 +12,15 @@
             <img src="image/logo.png" alt="Logo" class="w-24 mx-auto">
         </div>
         <h3 class="text-2xl font-semibold mb-6">Login Sekarang</h3>
-        <form action="dashboard.php" method="post">
+
+        <!-- Tampilkan alert jika login gagal -->
+        <?php if (isset($_GET['error'])): ?>
+            <div class="mb-4 text-red-500 font-medium">
+                Username atau password salah!
+            </div>
+        <?php endif; ?>
+
+        <form action="autentikasi.php" method="post">
             <div class="mb-4">
                 <input type="text" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Username" name="username" required>
             </div>
